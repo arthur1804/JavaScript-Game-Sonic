@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lua {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    z-index: 1; /* Certifique-se de que a lua apareça acima dos outros elementos */
+}
+
+.score {
+    font-size: 50px; 
+    color: white;
+}
+
+.game-board{
+    width: 100%;
+    height: 100vh;
+    border-bottom: 30px solid rgb(0, 0, 0);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#010507, rgb(9, 46, 61));
+}
+
+button {
+    background: rgb(23, 0, 128);
+    color: rgb(228, 226, 226);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    padding: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+button:hover {
+    border: 2px solid rgb(0, 9, 128);
+    background: none;
+    color: green;
+}
+
+.game-over {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.322);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.game-over h1 {
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+    margin-top: 15rem;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    width: 80px;
+    z-index: 2;
+}
+
+.sonic{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    top: 0;
+    animation: clouds-animation 20s infinite linear;
+}
+
+
+.clouds2 {
+    width: 550px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    animation: clouds2-animation 20s infinite linear;
+}
+
+.bird {
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    animation: bird-animation 20s infinite linear;
+}
+
+.cidade-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+}
+
+.cidade {
+    width: 2000px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    animation: cidade-animation 50s infinite linear;
+}
+
+.cidade2 {
+    width: 2000px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    left: 2000px; /* Posicione a segunda instância à direita da primeira */
+    animation: cidade-animation 50s infinite linear;
+}
+
+@keyframes cidade-animation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-2000px); /* Mova a cidade para a esquerda, ajuste conforme necessário */
+    }
+}
+
+@keyframes bird-animation {
+    from {
+        right: -110px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes clouds2-animation {
+    from {
+        right: -560px;
+    }
+    to {
+        right: 70%;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -560px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+.pipe-animation {
+    animation: pipe-animation 2s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.jump {
+    animation: jump 800ms ease-out;
+}
+
+@keyframes jump {
+    0% {
+        bottom:0;
+    }
+
+    40% {
+        bottom: 200px;
+    }
+
+    50% {
+        bottom: 200px;
+    }
+
+    60% {
+        bottom: 200px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}

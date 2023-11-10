@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <title>JOGO DO DINOSSAURO</title>
+</head>
+<body>
+    <canvas id="luaCanvas" width="500" height="500" class="lua"></canvas>
+    <div class="game-board">
+        <div class="score">SCORE: <span id="score">0</span></div>
+        <img src="./imagens/clouds.png" class="clouds">
+        <img src="./imagens/clouds2.png" class="clouds2">
+        <img src="./imagens/sonic.gif" class="sonic">
+        <img src="./imagens/pipe.png" class="pipe">
+        <div class="cidade-container">
+            <img src="./imagens/cidade.png" class="cidade">
+            <img src="./imagens/cidade.png" class="cidade2">
+        </div>
+        <img src="./imagens/bird.gif" class="bird">
+        <button class="start" onclick="startGame()">PLAY</button>
+    </div>
+
+    <div class="game-over">
+        <h1>GAME OVER :(</h1>
+        <button onclick="restartGame()">Restart</button>
+    </div>
+
+</body>
+</html>
