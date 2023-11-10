@@ -22,8 +22,8 @@ const startGame = () => {
 }
 
 const restartGame = () => {
-    score = 0; // Zera a pontuação
-    updateScore(); // Atualiza a pontuação na tela
+    score = 0; 
+    updateScore(); 
 
     gameOver.style.display = 'none'
     pipe.style.left = ''
@@ -43,9 +43,8 @@ const restartGame = () => {
 
 const jump = () => {
     sonic.classList.add('jump')
-    score++; // Incrementa a pontuação quando o Sonic pula
-    updateScore(); // Atualiza a pontuação na tela
-
+    score++; 
+    updateScore(); 
     setTimeout(() => {
         sonic.classList.remove('jump')
     }, 800)
@@ -55,11 +54,11 @@ function desenharLua() {
   var canvas = document.getElementById("luaCanvas");
   var ctx = canvas.getContext("2d");
 
-  // Desenhe a lua aqui usando os métodos do contexto 2D
+  
   ctx.beginPath();
   ctx.arc(250, 250, 50, 0, 2 * Math.PI);
 
-  // Adicione um gradiente radial para simular o brilho
+ 
   var gradient = ctx.createRadialGradient(250, 250, 0, 250, 250, 50);
   gradient.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
   gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)');
@@ -70,13 +69,13 @@ function desenharLua() {
   ctx.fill();
   ctx.closePath();
 }
-// Função para integrar a lua ao jogo
+
 function integrarLuaNoJogo() {
   desenharLua();
   console.log("Lua integrada ao jogo!");
 }
 
-// Chame a função de integração quando a página carregar
+
 window.onload = integrarLuaNoJogo
 
 const loop = () => {
